@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="script.js"></script>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+
+  </style>
+</head>
+<body>
+  <main>
+    <div class="container">
+
+        <div class="card">
+
+        </div>
+
+        <div class="back-card">
+          <h2 id="card-cvv">000</h2>
+        </div>
+        <div class="front-card">
+          <img src="images/card-logo.svg">
+          <h1 id="card-no">0000 0000 0000 0000</h1>
+          <div class="card-details">
+            <h2 id="card-name">Jane Appleseed</h2>
+            <h2><span class="card-exp">00</span>/<span class="card-year">00</span></h2>
+          </div>
+        </div>
+
+
+  
+    
+      <!-- Completed state start -->
+    
+
+    </div>
+
+    <div data-step="1">
+      <form>
+
+        <div class="form-group">
+            <label>Cardholder Name</label>
+            <input class="input" id="cardholdername" type="text" placeholder="e.g. Jane Appleseed"></input>
+        </div>
+        <div class="form-group">
+          <label>Card Number</label>
+          <input class="input"  id="cardno" maxlength="16" type="text" placeholder="e.g. 1234 5678 9123 0000" ></input>
+          <label class="error err-number">Wrong format, numbers only</label>
+        </div> 
+        <div class="form-group-details">
+
+            <label class="exp-label">Exp. Date (MM/YY)</label>
+            <input class="input" pattern="[0-9]{2}" maxlength="2" id="month" type="text" placeholder="MM">
+
+            <input class="input" maxlength="2" id="year" type="text" placeholder="YY">
+
+
+            <label class="cvc-label">CVC</label>
+            <input class="input" onkeypress="return isNumberKey(event)" maxlength="3" id="cvv" type="text" placeholder="e.g. 123">
+
+            <label class="error err-exp">Can't be blank</label>
+            <label class="error err-cvv">Can't be blank</label>
+        </div>
+
+        <button id="confirmBtn" class="confirmBtn">Confirm</button>
+      </form>
+    </div>
+    <div class="thankyou" data-step="2" style="display:none">
+      <img src="images/icon-complete.svg">
+      <h3>Thank you!</h3>
+      <p>We've added your card details</p>
+      <button id="continueBtn" class="confirmBtn">Continue</button>
+    </div>
+
+
+
+  </main>
+
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Josh Michael</a>.
+  </div>
+</body>
+</html>
